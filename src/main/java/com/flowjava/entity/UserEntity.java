@@ -4,6 +4,8 @@ import com.flowjava.entity.ext.Auditable;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "SYSTEM_USER")
@@ -11,8 +13,8 @@ public class UserEntity extends Auditable<String> implements Serializable {
 
     @Column(name = "ID")
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private UUID id;
 
     @Column(name = "USER_NAME", nullable = true, length = 255)
     private String userName;
@@ -29,17 +31,23 @@ public class UserEntity extends Auditable<String> implements Serializable {
     @Column(name = "PASSWORD", nullable = true, length = 500)
     private String password;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "system_user_gorup",
+            joinColumns = { @JoinColumn(name = "system_user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "group_id") })
+    private List<GroupUser> groupUsers;
+
     // constructor
 
     public UserEntity() {
     }
 
     // setter and getter
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -81,5 +89,15 @@ public class UserEntity extends Auditable<String> implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public List<GroupUser> getGroupUsers() {
+        return groupUsers;
+    }
+
+
+    public void setGroupUsers(List<GroupUser> groupUsers) {
+        this.groupUsers = groupUsers;
     }
 }
