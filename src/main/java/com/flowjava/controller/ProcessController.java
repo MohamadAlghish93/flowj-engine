@@ -12,12 +12,9 @@ import com.flowjava.service.VariableService;
 import com.flowjava.shared.ConstantsApp;
 import com.flowjava.shared.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(maxAge = 3600)
@@ -61,7 +58,7 @@ public class ProcessController {
             value = "/addProcess",
             method = RequestMethod.POST
             )
-    public ResponseService addFiles(@Valid @RequestBody String process) {
+    public ResponseService createNewProcessString(@Valid @RequestBody String process) {
         ResponseService responseService = new ResponseService();
         try{
             ObjectMapper mapper = new ObjectMapper();
@@ -73,7 +70,7 @@ public class ProcessController {
                     Variable variable = this.variableService.addVariable(item);
                 }
                 var.setProcessId(projectObj.getId());
-                Activity activity = this.activityService.addActivity(var);
+                Activity activity = this.activityService.saveActivity(var);
             }
 
             for (Arrow var : projectObj.getArrows()) {
@@ -91,6 +88,23 @@ public class ProcessController {
         return responseService;
     }
 
+    @RequestMapping(
+            value = {"/list"},
+            method = {RequestMethod.GET}
+    )
+    public ResponseService  getListProcess() {
+        ResponseService responseService = new ResponseService();
+        try {
+            List<Process> processes = this.processService.listProcess();
 
+            responseService.setData(processes);
+
+        } catch (Exception e) {
+            responseService.setStatus(false);
+            responseService.setMessage(e.getMessage());
+
+        }
+        return responseService;
+    }
 
 }

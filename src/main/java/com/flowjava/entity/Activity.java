@@ -1,5 +1,6 @@
 package com.flowjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
@@ -13,13 +14,14 @@ public class Activity {
     private UUID id;
     private String name;
     private int status;
+    private int tag;
     private UUID processId;
     private List<GroupUser> groupUsers;
     private List<Variable> variables;
     private Process processActivity;
-    private List<Arrow> arrowPrev;
-    private List<Arrow> arrowNext;
-    private List<Arrow> arrowCurrent;
+//    private List<Arrow> arrowPrev;
+//    private List<Arrow> arrowNext;
+//    private List<Arrow> arrowCurrent;
 
 
     @Column(name = "id")
@@ -76,7 +78,6 @@ public class Activity {
     }
 
 
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "activity_variable",
             joinColumns = { @JoinColumn(name = "activity_id") },
@@ -100,30 +101,40 @@ public class Activity {
         this.processActivity = processActivity;
     }
 
-    @ManyToMany(mappedBy = "activitiesPrev")
-    public List<Arrow> getArrowPrev() {
-        return arrowPrev;
-    }
-    public void setArrowPrev(List<Arrow> arrowPrev) {
-        this.arrowPrev = arrowPrev;
+    @Basic
+    @Column(name = "tag")
+    public int getTag() {
+        return tag;
     }
 
-    @ManyToMany(mappedBy = "activitiesNext")
-    public List<Arrow> getArrowNext() {
-        return arrowNext;
-    }
-
-    public void setArrowNext(List<Arrow> arrowNext) {
-        this.arrowNext = arrowNext;
+    public void setTag(int tag) {
+        this.tag = tag;
     }
 
 
-    @ManyToMany(mappedBy = "activityCurrent")
-    public List<Arrow> getArrowCurrent() {
-        return arrowCurrent;
-    }
-
-    public void setArrowCurrent(List<Arrow> arrowCurrent) {
-        this.arrowCurrent = arrowCurrent;
-    }
+    //    @ManyToMany(mappedBy = "activitiesPrev")
+//    public List<Arrow> getArrowPrev() {
+//        return arrowPrev;
+//    }
+//    public void setArrowPrev(List<Arrow> arrowPrev) {
+//        this.arrowPrev = arrowPrev;
+//    }
+//
+//    @ManyToMany(mappedBy = "activitiesNext")
+//    public List<Arrow> getArrowNext() {
+//        return arrowNext;
+//    }
+//
+//    public void setArrowNext(List<Arrow> arrowNext) {
+//        this.arrowNext = arrowNext;
+//    }
+//
+//    @ManyToMany(mappedBy = "activityCurrent")
+//    public List<Arrow> getArrowCurrent() {
+//        return arrowCurrent;
+//    }
+//
+//    public void setArrowCurrent(List<Arrow> arrowCurrent) {
+//        this.arrowCurrent = arrowCurrent;
+//    }
 }

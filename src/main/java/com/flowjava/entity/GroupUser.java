@@ -10,7 +10,7 @@ import java.util.UUID;
 public class GroupUser {
     private UUID id;
     private String name;
-    private List<Activity> activityGroupUser;
+//    private List<Activity> activityGroupUser;
 
     @Column(name = "id")
     @Id
@@ -33,12 +33,12 @@ public class GroupUser {
         this.name = name;
     }
 
-    @ManyToMany(mappedBy = "groupUsers")
-    public List<Activity> getActivityGroupUser() {
-        return activityGroupUser;
-    }
-
-    public void setActivityGroupUser(List<Activity> activityGroupUser) {
-        this.activityGroupUser = activityGroupUser;
-    }
+//    @ManyToMany(mappedBy = "groupUsers")
+//    public List<Activity> getActivityGroupUser() {
+//        return activityGroupUser;
+//    }
+//
+//    public void setActivityGroupUser(List<Activity> activityGroupUser) {
+//        this.activityGroupUser = activityGroupUser;
+//    }
 }

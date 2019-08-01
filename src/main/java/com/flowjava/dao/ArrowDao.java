@@ -11,5 +11,5 @@ import java.util.List;
 public interface ArrowDao extends JpaRepository<Arrow, Integer> {
 
 
-    List<Arrow> findAllByActivitiesNext(List<Activity> activities);
+    List<Arrow> findAllByActivityCurrent(List<Activity> activities);
 }

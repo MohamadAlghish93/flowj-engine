@@ -5,6 +5,8 @@ import com.flowjava.entity.Process;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProcessService {
 
@@ -15,6 +17,10 @@ public class ProcessService {
     public Process addProcess(Process process) {
 
         return this.processDao.save(process);
+    }
+
+    public List<Process> listProcess() {
+        return this.processDao.findAll();
     }
 
 }

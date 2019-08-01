@@ -14,4 +14,10 @@ public class EnumsApp {
         active,
         pending;
     }
+
+    public enum enumActivityTags{
+        start,
+        process,
+        end;
+    }
 }
