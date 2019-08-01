@@ -1,9 +1,12 @@
 package com.flowjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
 @Entity
 @Table(name = "Process",  catalog = "")
 public class Process {
@@ -11,10 +14,11 @@ public class Process {
     private String name;
     private int status;
     private List<Activity> activities;
+    private List<Arrow> arrows;
 
     @Column(name = "id")
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     public UUID getId() {
         return id;
     }
@@ -43,7 +47,8 @@ public class Process {
         this.status = status;
     }
 
-    @OneToMany(fetch = FetchType.LAZY,
+    @Transient
+    @OneToMany(orphanRemoval=true,fetch = FetchType.LAZY,
             cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "processActivity")
     public List<Activity> getActivities() {
         return activities;
@@ -52,4 +57,18 @@ public class Process {
     public void setActivities(List<Activity> activities) {
         this.activities = activities;
     }
+
+
+    @Transient
+    @OneToMany(orphanRemoval=true,fetch = FetchType.LAZY,
+            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "arrowsProcess")
+    public List<Arrow> getArrows() {
+        return arrows;
+    }
+
+    public void setArrows(List<Arrow> arrows) {
+        this.arrows = arrows;
+    }
+
+
 }

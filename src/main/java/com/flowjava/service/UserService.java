@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -21,6 +22,16 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     UserDao userDao;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
+    public UserEntity createUser(UserEntity userEntity) {
+        if (userEntity.getPassword() != null && userEntity.getPassword() != ""){
+            userEntity.setPassword(encoder.encode(userEntity.getPassword()));
+        }
+        return this.userDao.save(userEntity);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {

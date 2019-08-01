@@ -1,0 +1,108 @@
+{
+	"process": {
+		"id" : "01eb9cc5-ca0f-4250-869c-4eec574b961c",
+		"name" : "My flow",
+		"status" : 1,   
+		"activities" : [
+			{
+				"id": "68460b84-8639-4912-8031-0fd0e31385fc",
+				"name": "activity 1",
+				"status": 1, 
+				"groupUsers": [
+					{
+						"id" : "bb64815a-a7d0-4cd6-9a8b-5d48326de612"
+					}
+				],
+				"variables": [
+					{
+						"id": "f34073c8-7999-4d4c-927e-f76b5751d325",
+						"name": "var1",
+						"type": "text",
+						"value": ""
+					}
+				]
+			},
+			{
+				"id": "25b61e75-03ef-40d0-805d-75b903e416a9",
+				"name": "activity 2",
+				"status": 0,  
+				"groupUsers": [
+					{
+						"id" : "bb64815a-a7d0-4cd6-9a8b-5d48326de612"
+					}
+				],
+				"variables": [
+					{
+						"id": "f34073c8-7999-4d4c-927e-f76b5751d325",
+						"name": "var1",
+						"type": "text",
+						"value": ""
+					}
+				]
+			},
+			{
+				"id": "7a9255bf-3317-455b-9ef0-c37a0892eb6a",
+				"name": "activity 3",
+				"status": 0,  
+				"groupUsers": [
+					{
+						"id" : "bb64815a-a7d0-4cd6-9a8b-5d48326de612"
+					}
+				],
+				"variables": [
+					{
+						"id": "f34073c8-7999-4d4c-927e-f76b5751d325",
+						"name": "var1",
+						"type": "text",
+						"value": ""
+					}
+				]
+			},
+			{
+				"id": "52f62d25-9a79-4fd9-8310-3bda888ff9d0",
+				"name": "activity 4",
+				"status": 0,  
+				"groupUsers": [
+					{
+						"id" : "bb64815a-a7d0-4cd6-9a8b-5d48326de612"
+					}
+				],
+				"variables": [
+					{
+						"id": "f34073c8-7999-4d4c-927e-f76b5751d325",
+						"name": "var1",
+						"type": "text",
+						"value": ""
+					}
+				]
+			}
+		],
+		"arrows" : [
+			{
+				"id" : "41291a41-b9bc-447a-9662-6a8f7cb7ffe7",
+				"name" : "next",
+				"activityCurrent" : ["68460b84-8639-4912-8031-0fd0e31385fc"],
+				"activitiesNext": ["25b61e75-03ef-40d0-805d-75b903e416a9"],
+				"activitiesPrev": [],
+				"Condition": "true"
+			},
+			{
+				"id" : "2882fafb-a8ac-43b4-8089-18d8996463f5",
+				"name" : "next",
+				"activityCurrent": ["25b61e75-03ef-40d0-805d-75b903e416a9"],
+				"activitiesNext": ["7a9255bf-3317-455b-9ef0-c37a0892eb6a"],
+				"activitiesPrev": ["68460b84-8639-4912-8031-0fd0e31385fc"],
+				"Condition": "true"
+			},
+			{
+				"id" : "73632995-c47c-4875-a776-372db30f1c1b",
+				"name" : "done",
+				"activityCurrent": ["7a9255bf-3317-455b-9ef0-c37a0892eb6a"],
+				"neactivitiesNextxt": ["52f62d25-9a79-4fd9-8310-3bda888ff9d0"],
+				"activitiesPrev": ["25b61e75-03ef-40d0-805d-75b903e416a9"],
+				"Condition": "true"
+			}
+		]
+
+	}
+}

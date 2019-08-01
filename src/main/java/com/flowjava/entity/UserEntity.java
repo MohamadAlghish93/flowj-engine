@@ -1,5 +1,6 @@
 package com.flowjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.flowjava.entity.ext.Auditable;
 
 import javax.persistence.*;
@@ -7,13 +8,14 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
 @Entity
 @Table(name = "SYSTEM_USER")
 public class UserEntity extends Auditable<String> implements Serializable {
 
     @Column(name = "ID")
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID id;
 
     @Column(name = "USER_NAME", nullable = true, length = 255)

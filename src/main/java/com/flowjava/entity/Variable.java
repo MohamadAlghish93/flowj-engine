@@ -1,11 +1,14 @@
 package com.flowjava.entity;
 
 
-import com.sun.org.apache.bcel.internal.generic.FADD;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.UUID;
 
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
 @Entity
 @Table(name = "variable")
 public class Variable {
@@ -14,11 +17,10 @@ public class Variable {
     private String name;
     private String type;
     private String value;
-    private Activity activityVariable;
 
     @Column(name = "id")
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     public UUID getId() {
         return id;
     }
@@ -56,13 +58,4 @@ public class Variable {
         this.value = value;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "activity_id", referencedColumnName = "ID", insertable=false, updatable=false)
-    public Activity getActivityVariable() {
-        return activityVariable;
-    }
-
-    public void setActivityVariable(Activity activityVariable) {
-        this.activityVariable = activityVariable;
-    }
 }

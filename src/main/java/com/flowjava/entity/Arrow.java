@@ -1,23 +1,28 @@
 package com.flowjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
 @Entity
 @Table(name = "arrow")
 public class Arrow {
 
     private UUID id;
     private String name;
+    private Process arrowsProcess;
+    private UUID processId;
+    private List<Activity> activityCurrent;
     private List<Activity> activitiesNext;
     private List<Activity> activitiesPrev;
-    private List<Activity> activityCurrent;
     private String Condition;
 
     @Column(name = "id")
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     public UUID getId() {
         return id;
     }
@@ -36,6 +41,15 @@ public class Arrow {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "process_id")
+    public UUID getProcessId() {
+        return processId;
+    }
+
+    public void setProcessId(UUID processId) {
+        this.processId = processId;
+    }
 
     @Basic
     @Column(name = "condition", length = 2048)
@@ -48,8 +62,10 @@ public class Arrow {
     }
 
 
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "arrowNext")
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "activity_arrow_next",
+            joinColumns = { @JoinColumn(name = "arrow_id") },
+            inverseJoinColumns = { @JoinColumn(name = "activity_id") })
     public List<Activity> getActivitiesNext() {
         return activitiesNext;
     }
@@ -59,8 +75,10 @@ public class Arrow {
     }
 
 
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "arrowPrev")
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "activity_arrow_prev",
+            joinColumns = { @JoinColumn(name = "arrow_id") },
+            inverseJoinColumns = { @JoinColumn(name = "activity_id") })
     public List<Activity> getActivitiesPrev() {
         return activitiesPrev;
     }
@@ -69,15 +87,26 @@ public class Arrow {
         this.activitiesPrev = activitiesPrev;
     }
 
-
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "currentArrow")
-
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "activity_arrow_current",
+            joinColumns = { @JoinColumn(name = "arrow_id") },
+            inverseJoinColumns = { @JoinColumn(name = "activity_id") })
     public List<Activity> getActivityCurrent() {
         return activityCurrent;
     }
 
     public void setActivityCurrent(List<Activity> activityCurrent) {
         this.activityCurrent = activityCurrent;
+    }
+
+    @Transient
+    @ManyToOne( cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @JoinColumn(name = "process_id",referencedColumnName = "ID", nullable = false,insertable=true, updatable=true)
+    public Process getArrowsProcess() {
+        return arrowsProcess;
+    }
+
+    public void setArrowsProcess(Process arrowsProcess) {
+        this.arrowsProcess = arrowsProcess;
     }
 }

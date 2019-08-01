@@ -2,6 +2,7 @@ package com.flowjava.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -9,11 +10,11 @@ import java.util.UUID;
 public class GroupUser {
     private UUID id;
     private String name;
-    private Activity activityGroupUser;
+    private List<Activity> activityGroupUser;
 
     @Column(name = "id")
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     public UUID getId() {
         return id;
     }
@@ -32,13 +33,12 @@ public class GroupUser {
         this.name = name;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "activity_id", referencedColumnName = "ID", insertable=false, updatable=false)
-    public Activity getActivityGroupUser() {
+    @ManyToMany(mappedBy = "groupUsers")
+    public List<Activity> getActivityGroupUser() {
         return activityGroupUser;
     }
 
-    public void setActivityGroupUser(Activity activityGroupUser) {
+    public void setActivityGroupUser(List<Activity> activityGroupUser) {
         this.activityGroupUser = activityGroupUser;
     }
 }

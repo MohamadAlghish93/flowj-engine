@@ -1,8 +1,7 @@
 package com.flowjava.controller;
 
-
-import com.flowjava.entity.UserEntity;
-import com.flowjava.service.UserService;
+import com.flowjava.entity.GroupUser;
+import com.flowjava.service.GroupUserService;
 import com.flowjava.shared.ConstantsApp;
 import com.flowjava.shared.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,21 +12,21 @@ import javax.validation.Valid;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
-@RequestMapping("/api/user")
-public class UserController {
+@RequestMapping("/api/group")
+public class GroupUserController {
 
     @Autowired
-    UserService userService;
+    GroupUserService groupUserService;
 
     @RequestMapping(
-            value = "/create_user",
+            value = "/add",
             method = RequestMethod.POST)
-    public ResponseService createNewUser(@Valid @RequestBody UserEntity userEntity) {
+    public ResponseService createNewGroup(@Valid @RequestBody GroupUser groupUser) {
         ResponseService responseService = new ResponseService();
         try{
-            UserEntity userEntityCreated =  this.userService.createUser(userEntity);
+            GroupUser groupUser1 =  this.groupUserService.addGroup(groupUser);
 
-            responseService.setData(userEntityCreated);
+            responseService.setData(groupUser1);
 
         } catch (Exception e) {
             responseService.setResponseCode(ConstantsApp.NOT_FOUND);
