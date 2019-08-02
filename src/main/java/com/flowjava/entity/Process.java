@@ -38,7 +38,7 @@ public class Process {
     }
 
     @Basic
-    @Column(name = "statues",unique = true, nullable = true, length = 255)
+    @Column(name = "statues", nullable = true, length = 255)
     public int getStatus() {
         return status;
     }

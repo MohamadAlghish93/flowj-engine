@@ -33,6 +33,12 @@ public class UserService implements UserDetailsService {
         return this.userDao.save(userEntity);
     }
 
+    public Optional<UserEntity> findByEmail(String email) {
+
+        return this.userDao.findByEmail(email);
+    }
+
+
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 

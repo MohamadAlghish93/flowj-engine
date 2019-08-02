@@ -50,18 +50,17 @@ public class ActivityController {
             List<Activity> activityList = this.activityService.findAllByProcessId(processId);
             Activity activity = this._businessActivity.getMyActiveActivityByGroupId(activityList, groupId);
 
+            responseService.setData(activity);
+
+
             if (activity.getTag() != EnumsApp.enumActivityTags.end.ordinal()) {
                 List<Activity> tmpActivities = new ArrayList<>();
                 tmpActivities.add(activity);
                 arrows = this.arrowService.findAllByActivityCurrent(tmpActivities);
+
+                responseService.setMultiObject(true);
+                responseService.append_objects("Arrows", arrows);
             }
-
-
-
-            responseService.setData(activity);
-            responseService.setMultiObject(true);
-            responseService.append_objects("Arrows", arrows);
-
 
         } catch (Exception e) {
             responseService.setStatus(false);
@@ -84,7 +83,7 @@ public class ActivityController {
 
 
             for (Variable item : value.getVariables()) {
-                Variable variable = this.variableService.addVariable(item);
+                Variable variable = this.variableService.saveVaiable(item);
             }
             value.setStatus(EnumsApp.enumActivityStatus.inactive.ordinal());
             Activity activity1 = this.activityService.saveActivity(value);

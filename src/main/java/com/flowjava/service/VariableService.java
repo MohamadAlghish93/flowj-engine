@@ -7,14 +7,21 @@ import com.flowjava.entity.Variable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VariableService {
 
     @Autowired
     VariableDao variableDao;
 
-    public Variable addVariable(Variable variable) {
+    public Variable saveVaiable(Variable variable) {
 
         return this.variableDao.save(variable);
+    }
+
+    public List<Variable> saveAllVariables(List<Variable> variables) {
+
+        return this.variableDao.saveAll(variables);
     }
 }

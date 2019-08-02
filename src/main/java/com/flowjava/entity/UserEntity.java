@@ -13,30 +13,14 @@ import java.util.UUID;
 @Table(name = "SYSTEM_USER")
 public class UserEntity extends Auditable<String> implements Serializable {
 
-    @Column(name = "ID")
-    @Id
+
 //    @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID id;
-
-    @Column(name = "USER_NAME", nullable = true, length = 255)
     private String userName;
-
-    @Column(name = "FIRST_NAME", nullable = true, length = 255)
     private String firstName;
-
-    @Column(name = "LAST_NAME", nullable = true, length = 255)
     private String lastName;
-
-    @Column(name = "EMAIL", nullable = true, length = 255)
     private String email;
-
-    @Column(name = "PASSWORD", nullable = true, length = 500)
     private String password;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "system_user_gorup",
-            joinColumns = { @JoinColumn(name = "system_user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "group_id") })
     private List<GroupUser> groupUsers;
 
     // constructor
@@ -45,6 +29,9 @@ public class UserEntity extends Auditable<String> implements Serializable {
     }
 
     // setter and getter
+
+    @Column(name = "ID")
+    @Id
     public UUID getId() {
         return id;
     }
@@ -53,6 +40,7 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.id = id;
     }
 
+    @Column(name = "USER_NAME", nullable = true, length = 255)
     public String getUserName() {
         return userName;
     }
@@ -61,6 +49,7 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.userName = userName;
     }
 
+    @Column(name = "FIRST_NAME", nullable = true, length = 255)
     public String getFirstName() {
         return firstName;
     }
@@ -69,6 +58,7 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.firstName = firstName;
     }
 
+    @Column(name = "LAST_NAME", nullable = true, length = 255)
     public String getLastName() {
         return lastName;
     }
@@ -77,6 +67,7 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.lastName = lastName;
     }
 
+    @Column(name = "EMAIL", nullable = true, length = 255)
     public String getEmail() {
         return email;
     }
@@ -85,6 +76,8 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.email = email;
     }
 
+
+    @Column(name = "PASSWORD", nullable = true, length = 500)
     public String getPassword() {
         return password;
     }
@@ -93,11 +86,13 @@ public class UserEntity extends Auditable<String> implements Serializable {
         this.password = password;
     }
 
-
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "system_user_gorup",
+            joinColumns = { @JoinColumn(name = "system_user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "group_id") })
     public List<GroupUser> getGroupUsers() {
         return groupUsers;
     }
-
 
     public void setGroupUsers(List<GroupUser> groupUsers) {
         this.groupUsers = groupUsers;

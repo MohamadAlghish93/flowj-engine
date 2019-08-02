@@ -30,7 +30,7 @@ public class Variable {
     }
 
     @Basic
-    @Column(name = "name",unique = true, nullable = false, length = 255)
+    @Column(name = "name", nullable = false, length = 255)
     public String getName() {
         return name;
     }
@@ -40,7 +40,7 @@ public class Variable {
     }
 
     @Basic
-    @Column(name = "type",unique = true, nullable = false, length = 255)
+    @Column(name = "type", nullable = false, length = 255)
     public String getType() {
         return type;
     }
@@ -49,6 +49,7 @@ public class Variable {
         this.type = type;
     }
 
+    @Basic
     @Column(name = "value", nullable = true, length = 500)
     public String getValue() {
         return value;

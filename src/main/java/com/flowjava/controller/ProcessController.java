@@ -66,9 +66,8 @@ public class ProcessController {
 
 
             for (Activity var : projectObj.getActivities()) {
-                for (Variable item : var.getVariables()) {
-                    Variable variable = this.variableService.addVariable(item);
-                }
+                this.variableService.saveAllVariables(var.getVariables());
+
                 var.setProcessId(projectObj.getId());
                 Activity activity = this.activityService.saveActivity(var);
             }
