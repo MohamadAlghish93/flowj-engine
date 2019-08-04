@@ -46,21 +46,26 @@ public class ActivityController {
         ResponseService responseService = new ResponseService();
         try {
 
-            List<Arrow> arrows = new ArrayList<>();
+            List<Arrow> arrows;
             List<Activity> activityList = this.activityService.findAllByProcessId(processId);
-            Activity activity = this._businessActivity.getMyActiveActivityByGroupId(activityList, groupId);
+            List<Activity> activity = this._businessActivity.getMyActiveActivityByGroupId(activityList, groupId);
 
             responseService.setData(activity);
 
+            for (Activity item:
+                    activity) {
 
-            if (activity.getTag() != EnumsApp.enumActivityTags.end.ordinal()) {
-                List<Activity> tmpActivities = new ArrayList<>();
-                tmpActivities.add(activity);
-                arrows = this.arrowService.findAllByActivityCurrent(tmpActivities);
+                if (item.getTag() != EnumsApp.enumActivityTags.end.ordinal()) {
+                    arrows = new ArrayList<>();
+                    List<Activity> tmpActivities = new ArrayList<>();
+                    tmpActivities.add(item);
+                    arrows = this.arrowService.findAllByActivityCurrent(tmpActivities);
 
-                responseService.setMultiObject(true);
-                responseService.append_objects("Arrows", arrows);
+                    responseService.setMultiObject(true);
+                    responseService.append_objects("Arrows_" + item.getId(), arrows);
+                }
             }
+
 
         } catch (Exception e) {
             responseService.setStatus(false);
@@ -88,13 +93,17 @@ public class ActivityController {
             value.setStatus(EnumsApp.enumActivityStatus.inactive.ordinal());
             Activity activity1 = this.activityService.saveActivity(value);
 
-            Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+            List<Activity> activityList = this.activityService.findAllByProcessId(value.getProcessId());
+            List<Activity> activities = this._businessActivity.getOtherActivitiesActive(activityList, value.getId());
 
-            if (activity2 != null) {
-                activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
-                this.activityService.saveActivity(activity2.get());
+            if (activities.size() == 0) {
+                Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+
+                if (activity2 != null) {
+                    activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
+                    this.activityService.saveActivity(activity2.get());
+                }
             }
-
 
             responseService.setData(activity1);
         } catch (Exception e) {

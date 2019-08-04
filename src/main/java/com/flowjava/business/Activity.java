@@ -3,6 +3,7 @@ package com.flowjava.business;
 import com.flowjava.entity.GroupUser;
 import com.flowjava.shared.EnumsApp;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -11,8 +12,9 @@ public class Activity {
     public Activity() {
     }
 
-    public com.flowjava.entity.Activity getMyActiveActivityByGroupId(List<com.flowjava.entity.Activity> activities, UUID groupId) {
+    public List<com.flowjava.entity.Activity> getMyActiveActivityByGroupId(List<com.flowjava.entity.Activity> activities, UUID groupId) {
 
+        List<com.flowjava.entity.Activity> list = new ArrayList<>();
         for (com.flowjava.entity.Activity item: activities) {
 
             GroupUser equalGroup = item.getGroupUsers().stream()
@@ -21,13 +23,30 @@ public class Activity {
             if ( item.getStatus() == EnumsApp.enumActivityStatus.active.ordinal()
                     && equalGroup != null  ) {
 
-                return item;
-
+                list.add(item);
             }
 
         }
 
-        return null;
+        return list;
+
+    }
+
+
+    public List<com.flowjava.entity.Activity> getOtherActivitiesActive(List<com.flowjava.entity.Activity> activities, UUID activityId) {
+
+        List<com.flowjava.entity.Activity> list = new ArrayList<>();
+        for (com.flowjava.entity.Activity item: activities) {
+
+            if ( item.getStatus() == EnumsApp.enumActivityStatus.active.ordinal()
+                    && activityId != item.getId()  ) {
+
+                list.add(item);
+            }
+
+        }
+
+        return list;
 
     }
 
