@@ -3,6 +3,8 @@ package com.flowengine.service;
 import com.flowengine.dao.UserDao;
 import com.flowengine.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 
 import static com.flowengine.shared.ConstantsApp.DEFAULT_ROLE;
 
@@ -26,7 +29,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder encoder;
 
-    public UserEntity createUser(UserEntity userEntity) {
+    public UserEntity saveUser(UserEntity userEntity) {
         if (userEntity.getPassword() != null && userEntity.getPassword() != ""){
             userEntity.setPassword(encoder.encode(userEntity.getPassword()));
         }
@@ -36,6 +39,27 @@ public class UserService implements UserDetailsService {
     public Optional<UserEntity> findByEmail(String email) {
 
         return this.userDao.findByEmail(email);
+    }
+
+    public Page<UserEntity> findAll(Pageable pageable) {
+
+        return this.userDao.findAll(pageable);
+    }
+
+    public Optional<UserEntity> findById(UUID uuid) {
+
+        return this.userDao.findById(uuid);
+    }
+
+    public boolean deleteById(UUID uuid) {
+
+        try {
+            this.userDao.deleteById(uuid);
+
+            return true;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
 

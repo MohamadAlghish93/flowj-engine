@@ -12,7 +12,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
@@ -42,16 +45,77 @@ public class GroupUserController {
 
 
     @RequestMapping(
+            value = {"get/{groupId}"},
+            method = {RequestMethod.GET}
+    )
+    public ResponseService getById(@PathVariable UUID groupId) {
+        ResponseService responseService = new ResponseService();
+        try {
+
+            Optional<GroupUser> item = this.groupUserService.findById(groupId);
+
+            responseService.setData(item);
+
+        } catch (Exception e) {
+            responseService.setStatus(false);
+            responseService.setMessage(e.getMessage());
+
+        }
+        return responseService;
+    }
+
+    @RequestMapping(
+            value = {"delete/{groupId}"},
+            method = {RequestMethod.GET}
+    )
+    public ResponseService deleteById(@PathVariable UUID groupId) {
+        ResponseService responseService = new ResponseService();
+        try {
+
+            boolean deleted = this.groupUserService.deleteById(groupId);
+
+            responseService.setData(deleted);
+
+        } catch (Exception e) {
+            responseService.setStatus(false);
+            responseService.setMessage(e.getMessage());
+
+        }
+        return responseService;
+    }
+
+
+    @RequestMapping(
             value = {"/list/{page}/{size}"},
             method = {RequestMethod.GET}
     )
-    public ResponseService  listGroup(@PathVariable int page, @PathVariable int size) {
+    public ResponseService  listPage(@PathVariable int page, @PathVariable int size) {
         ResponseService responseService = new ResponseService();
         try {
 
             Page result = this.groupUserService.findAll(new PageRequest(page,size));
 
             responseService.setData(result);
+
+        } catch (Exception e) {
+            responseService.setStatus(false);
+            responseService.setMessage(e.getMessage());
+
+        }
+        return responseService;
+    }
+
+    @RequestMapping(
+            value = {"/list_all"},
+            method = {RequestMethod.GET}
+    )
+    public ResponseService listAll() {
+        ResponseService responseService = new ResponseService();
+        try {
+
+            List<GroupUser> items = this.groupUserService.findAll();
+
+            responseService.setData(items);
 
         } catch (Exception e) {
             responseService.setStatus(false);

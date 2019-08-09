@@ -11,6 +11,7 @@ public class GroupUser {
     private String name;
     private int code;
     private String type;
+    private String color;
     private Long permission;
 //    private List<Activity> activityGroupUser;
 
@@ -63,6 +64,16 @@ public class GroupUser {
 
     public void setPermission(Long permission) {
         this.permission = permission;
+    }
+
+    @Basic
+    @Column(name = "color",nullable = true)
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     //    @ManyToMany(mappedBy = "groupUsers")
