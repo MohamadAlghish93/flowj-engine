@@ -9,6 +9,9 @@ import java.util.UUID;
 public class GroupUser {
     private UUID id;
     private String name;
+    private int code;
+    private String type;
+    private Long permission;
 //    private List<Activity> activityGroupUser;
 
     @Column(name = "id")
@@ -32,7 +35,37 @@ public class GroupUser {
         this.name = name;
     }
 
-//    @ManyToMany(mappedBy = "groupUsers")
+    @Basic
+    @Column(name = "code")
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    @Basic
+    @Column(name = "type",nullable = true, length = 255)
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Basic
+    @Column(name = "permission",nullable = true)
+    public Long getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Long permission) {
+        this.permission = permission;
+    }
+
+    //    @ManyToMany(mappedBy = "groupUsers")
 //    public List<Activity> getActivityGroupUser() {
 //        return activityGroupUser;
 //    }
