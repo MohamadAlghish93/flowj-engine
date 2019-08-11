@@ -16,7 +16,7 @@ public class ProcessService {
 
     public Process addProcess(Process process) {
 
-        return this.processDao.save(process);
+        return this.processDao.saveAndFlush(process);
     }
 
     public List<Process> listProcess() {

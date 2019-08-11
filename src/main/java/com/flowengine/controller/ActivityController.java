@@ -77,10 +77,10 @@ public class ActivityController {
 
 
     @RequestMapping(
-            value = "/excuteActivity/{activityId}",
+            value = "/excuteActivity/{activityId}/{multiArrow}",
             method = RequestMethod.POST
     )
-    public ResponseService excuteActivity(@Valid @RequestBody String activity, @PathVariable UUID activityId) {
+    public ResponseService excuteActivity(@Valid @RequestBody String activity, @PathVariable UUID activityId, @PathVariable boolean multiArrow) {
         ResponseService responseService = new ResponseService();
         try{
             ObjectMapper mapper = new ObjectMapper();
@@ -96,7 +96,14 @@ public class ActivityController {
             List<Activity> activityList = this.activityService.findAllByProcessId(value.getProcessId());
             List<Activity> activities = this._businessActivity.getOtherActivitiesActive(activityList, value.getId());
 
-            if (activities.size() == 0) {
+            if (activities.size() == 0 && !multiArrow) {
+                Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+
+                if (activity2 != null) {
+                    activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
+                    this.activityService.saveActivity(activity2.get());
+                }
+            } else if (multiArrow) {
                 Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
 
                 if (activity2 != null) {

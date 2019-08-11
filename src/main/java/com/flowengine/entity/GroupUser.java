@@ -9,7 +9,7 @@ import java.util.UUID;
 public class GroupUser {
     private UUID id;
     private String name;
-    private int code;
+    private String code;
     private String type;
     private String color;
     private Long permission;
@@ -38,11 +38,11 @@ public class GroupUser {
 
     @Basic
     @Column(name = "code")
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

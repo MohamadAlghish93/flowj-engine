@@ -28,7 +28,7 @@ public class Process {
     }
 
     @Basic
-    @Column(name = "name",unique = true, nullable = true, length = 255)
+    @Column(name = "name", nullable = true, length = 255)
     public String getName() {
         return name;
     }
