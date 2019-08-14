@@ -11,5 +11,6 @@ public class ConstantsApp {
     // Dilimater
     public static final String DILIMATER_OPTIONS = "$#$";
     public static final String DILIMATER_OPTIONS_VALUE_TEXT = ":#:";
+    public static final String UPLOAD_PATH = "./upload/";
 
 }

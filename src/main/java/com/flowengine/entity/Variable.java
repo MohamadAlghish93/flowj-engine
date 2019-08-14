@@ -18,6 +18,7 @@ public class Variable {
     private String value;
     private Boolean required;
     private List<VariableOptionValue> variableOptionValues;
+    private List<VariableFile> variableFiles;
 
     @Column(name = "id")
     @Id
@@ -79,5 +80,16 @@ public class Variable {
 
     public void setVariableOptionValues(List<VariableOptionValue> variableOptionValues) {
         this.variableOptionValues = variableOptionValues;
+    }
+
+//    @Transient
+    @OneToMany(orphanRemoval=true,fetch = FetchType.LAZY,
+            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "variableFromFile")
+    public List<VariableFile> getVariableFiles() {
+        return variableFiles;
+    }
+
+    public void setVariableFiles(List<VariableFile> variableFiles) {
+        this.variableFiles = variableFiles;
     }
 }
