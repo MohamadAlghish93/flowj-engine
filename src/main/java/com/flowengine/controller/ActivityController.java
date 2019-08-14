@@ -1,11 +1,8 @@
 package com.flowengine.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.flowengine.entity.Activity;
-import com.flowengine.entity.Arrow;
-import com.flowengine.entity.Variable;
-import com.flowengine.entity.VariableOptionValue;
-import com.flowengine.entity.helper.VariableFile;
+import com.flowengine.entity.*;
+import com.flowengine.entity.helper.HelperVariableFile;
 import com.flowengine.service.ActivityService;
 import com.flowengine.service.ArrowService;
 import com.flowengine.service.VariableOptionValueService;
@@ -139,13 +136,13 @@ public class ActivityController {
 
 
     @PostMapping(value = "/addVariableFile")
-    public ResponseService addFiles(@RequestParam("file") MultipartFile[] file, @RequestParam("variableFile") String variableFile) {
+    public ResponseService addFiles(@RequestParam("file") MultipartFile file, @RequestParam("helperVariableFile") String helperVariableFile) {
         ResponseService responseService = new ResponseService();
         try{
             ObjectMapper mapper = new ObjectMapper();
-            VariableFile humanCaseObj = mapper.readValue(variableFile, VariableFile.class);
-//            HumanCase addedProject =  this.humanCaseService.addFile(humanCaseObj, file);
-//            responseService.setData(addedProject);
+            HelperVariableFile helperVariableFileObj = mapper.readValue(helperVariableFile, HelperVariableFile.class);
+            VariableFile variableFile = this.activityService.addFile(helperVariableFileObj, file);
+            responseService.setData(variableFile);
 
 
         } catch (Exception e) {

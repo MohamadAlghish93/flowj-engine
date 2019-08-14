@@ -2,24 +2,26 @@ package com.flowengine.entity.helper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
-public class VariableFile {
-    private String guidVariable;
-    private String guidActivitty;
+import java.util.UUID;
 
-    public String getGuidVariable() {
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
+public class HelperVariableFile {
+    private UUID guidVariable;
+    private UUID guidActivitty;
+
+    public UUID getGuidVariable() {
         return guidVariable;
     }
 
-    public void setGuidVariable(String guidVariable) {
+    public void setGuidVariable(UUID guidVariable) {
         this.guidVariable = guidVariable;
     }
 
-    public String getGuidActivitty() {
+    public UUID getGuidActivitty() {
         return guidActivitty;
     }
 
-    public void setGuidActivitty(String guidActivitty) {
+    public void setGuidActivitty(UUID guidActivitty) {
         this.guidActivitty = guidActivitty;
     }
 }
