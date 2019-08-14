@@ -22,6 +22,142 @@
             "type": "text",
             "value": "",
             "required": true
+          },
+          {
+            "id": "f018ca95-cb2f-41a6-a174-aad09d072be8",
+            "name": "DOB",
+            "type": "date",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "dc987e78-9c18-4cc5-a598-8260b62919eb",
+            "name": "Gender",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Male",
+                "value": "M"
+              },
+              {
+                "text": "Female",
+                "value": "F"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "3a082958-5c15-448d-a2df-6f2b2f95fd71",
+            "name": "Primary Reason for Referral",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "34e97b3f-7805-4fc8-9441-159d244da219",
+            "name": "Persons Present at Consult",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "14eea1ff-6a4c-469b-bf32-9fba91eed66d",
+            "name": "Source of Referral",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "63ac28fc-116f-4a57-b2eb-9eb95a047690",
+            "name": "Mother/Guardian",
+            "type": "text",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "96037058-0bb2-4bf5-a2df-c6267115ba64",
+            "name": "Father/Guardian",
+            "type": "text",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "d4624dfe-4469-4569-8798-7a22d0d5c612",
+            "name": "Mother Occupation",
+            "type": "text",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "d23bb3be-a357-4b1b-bca1-664c5ec76468",
+            "name": "Father Occupation",
+            "type": "text",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "dbc36043-a8b2-4f7f-87e2-df0fbc379c94",
+            "name": "Mother Email adress",
+            "type": "text",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "b94e0110-66e0-4063-a87c-e788376a8438",
+            "name": "Father Email adress",
+            "type": "text",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "1a7e55e2-9a5d-4a58-aad1-c7dd046edc74",
+            "name": "Sibling/s",
+            "type": "number",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "c64b42ef-7836-4401-9b25-d202a894adf7",
+            "name": "Phone",
+            "type": "text",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "3f4137b4-4d9e-4ab7-a296-bc34479e01ff",
+            "name": "Mobile",
+            "type": "text",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "39649c35-b8f1-4e89-a9f2-a43a0de48de6",
+            "name": "Phone Emergency",
+            "type": "text",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "14eea1ff-6a4c-469b-bf32-9fba91eed66d",
+            "name": "Adress 1",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "229c508c-8a70-4bcb-8b26-3c9114f1a93c",
+            "name": "Adress 2",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "3900d09c-7642-4805-8aad-02f36044f572",
+            "name": "Attachment",
+            "type": "file",
+            "value": "",
+            "required": false
           }
         ]
       },
