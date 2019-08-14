@@ -33,7 +33,7 @@ public class Activity {
     }
 
 
-    public List<com.flowengine.entity.Activity> getOtherActivitiesActive(List<com.flowengine.entity.Activity> activities, UUID activityId) {
+    public List<com.flowengine.entity.Activity> getOtherActivitiesActivity(List<com.flowengine.entity.Activity> activities, UUID activityId) {
 
         List<com.flowengine.entity.Activity> list = new ArrayList<>();
         for (com.flowengine.entity.Activity item: activities) {

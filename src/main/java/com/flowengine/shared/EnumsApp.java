@@ -5,19 +5,27 @@ public class EnumsApp {
     public enum enumProcessStatus{
         open,
         in_progress,
-        finnished;
+        finnished
     }
 
 
     public enum enumActivityStatus{
         inactive,
         active,
-        pending;
+        pending
     }
 
     public enum enumActivityTags{
         start,
         process,
-        end;
+        end
+    }
+
+    public enum enumVariableType{
+        text,
+        date,
+        radio,
+        file,
+        textarea
     }
 }

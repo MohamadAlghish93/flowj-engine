@@ -1,14 +1,9 @@
 package com.flowengine.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.flowengine.entity.Activity;
-import com.flowengine.entity.Arrow;
+import com.flowengine.entity.*;
 import com.flowengine.entity.Process;
-import com.flowengine.entity.Variable;
-import com.flowengine.service.ActivityService;
-import com.flowengine.service.ArrowService;
-import com.flowengine.service.ProcessService;
-import com.flowengine.service.VariableService;
+import com.flowengine.service.*;
 import com.flowengine.shared.ConstantsApp;
 import com.flowengine.shared.HelperObj;
 import com.flowengine.shared.ResponseService;
@@ -33,6 +28,9 @@ public class ProcessController {
 
     @Autowired
     VariableService variableService;
+
+    @Autowired
+    VariableOptionValueService variableOptionValueService;
 
     @Autowired
     ArrowService arrowService;
@@ -70,6 +68,19 @@ public class ProcessController {
 
 
             for (Activity var : projectObj.getActivities()) {
+
+                for (Variable item:
+                        var.getVariables()) {
+
+                    if (item.getVariableOptionValues() != null) {
+                        for (VariableOptionValue iter:
+                                item.getVariableOptionValues()) {
+
+                            iter.setVariableId(item.getId());
+                            this.variableOptionValueService.save(iter);
+                        }
+                    }
+                }
                 this.variableService.saveAllVariables(var.getVariables());
 
                 var.setProcessId(projectObj.getId());
@@ -103,6 +114,7 @@ public class ProcessController {
             ObjectMapper mapper = new ObjectMapper();
             Process projectObj = mapper.readValue(process, Process.class);
 
+            //region Generated New Ids
             Map<UUID, UUID> activityGuid = new HashMap<UUID, UUID>();
             Map<UUID, UUID> variableyGuid = new HashMap<UUID, UUID>();
             List<String> arrowGuid = new ArrayList<>();
@@ -188,9 +200,23 @@ public class ProcessController {
 
                 }
             }
+            //endregion
 
 
             for (Activity var : projectObj.getActivities()) {
+
+                for (Variable item:
+                        var.getVariables()) {
+
+                    if (item.getVariableOptionValues() != null) {
+                        for (VariableOptionValue iter:
+                                item.getVariableOptionValues()) {
+
+                            iter.setVariableId(item.getId());
+                            this.variableOptionValueService.save(iter);
+                        }
+                    }
+                }
                 this.variableService.saveAllVariables(var.getVariables());
 
                 var.setProcessId(projectObj.getId());

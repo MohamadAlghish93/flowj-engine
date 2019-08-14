@@ -4,6 +4,7 @@ package com.flowengine.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
@@ -15,6 +16,8 @@ public class Variable {
     private String name;
     private String type;
     private String value;
+    private Boolean required;
+    private List<VariableOptionValue> variableOptionValues;
 
     @Column(name = "id")
     @Id
@@ -57,4 +60,24 @@ public class Variable {
         this.value = value;
     }
 
+    @Basic
+    @Column(name = "required", nullable = true)
+    public Boolean getRequired() {
+        return required;
+    }
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
+
+    @Transient
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "variable")
+    public List<VariableOptionValue> getVariableOptionValues() {
+        return variableOptionValues;
+    }
+
+    public void setVariableOptionValues(List<VariableOptionValue> variableOptionValues) {
+        this.variableOptionValues = variableOptionValues;
+    }
 }

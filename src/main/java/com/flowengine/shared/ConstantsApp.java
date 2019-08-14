@@ -8,4 +8,8 @@ public class ConstantsApp {
     // Status Response
     public static final Integer NOT_FOUND = 404;
 
+    // Dilimater
+    public static final String DILIMATER_OPTIONS = "$#$";
+    public static final String DILIMATER_OPTIONS_VALUE_TEXT = ":#:";
+
 }

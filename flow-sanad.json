@@ -12,15 +12,47 @@
         "tag": 0,
         "groupUsers": [
           {
-            "id": "bb64815a-a7d0-4cd6-9a8b-5d48326de612"
+            "id": "1eecc141-5d50-49a7-ad31-705085548d8c"
           }
         ],
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "f018ca95-cb2f-41a6-a174-aad09d072be8",
+            "name": "DOB",
+            "type": "date",
+            "value": "",
+            "required": true
+          },
+          {
+            "id": "dc987e78-9c18-4cc5-a598-8260b62919eb",
+            "name": "Gender",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Male",
+                "value": "M"
+              },
+              {
+                "text": "Female",
+                "value": "F"
+              }
+            ],
+            "required": true
+          },
+          {
+            "id": "3a082958-5c15-448d-a2df-6f2b2f95fd71",
+            "name": "Primary Reason for Referral",
+            "type": "textarea",
+            "value": "",
+            "required": false
           }
         ]
       },
@@ -31,7 +63,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "e07f3c06-9baf-458e-a8fa-21a2e8772608"
+            "id": "e8ed9151-bd1b-4a74-b95e-6193f554c342"
           }
         ],
         "variables": [
@@ -50,7 +82,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "e07f3c06-9baf-458e-a8fa-21a2e8772608"
+            "id": "e8ed9151-bd1b-4a74-b95e-6193f554c342"
           }
         ],
         "variables": [
@@ -69,7 +101,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "c20d8d30-af7a-4e47-99cd-a058dba5e392"
+            "id": "0a9654c1-ff9d-4aca-bc58-212c10e6dbd8"
           }
         ],
         "variables": [
@@ -88,7 +120,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "a995bbb8-f0ff-4c02-8a4a-bb3c5b2cbf5a"
+            "id": "8aad58c8-f88b-46a8-b3c8-9e0f8b7e9f37"
           }
         ],
         "variables": [
@@ -107,7 +139,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "85b55443-650e-4a3c-bcfa-0f897cb5924c"
+            "id": "f2469b32-e9db-441e-a5b6-4fde4a66dc27"
           }
         ],
         "variables": [
@@ -126,7 +158,7 @@
         "tag": 1,
         "groupUsers": [
           {
-            "id": "14aa3294-748f-4a2e-b5dd-5debee2fc464"
+            "id": "d47aad08-bc73-4a52-96a4-b87cb879da24"
           }
         ],
         "variables": [
@@ -145,7 +177,7 @@
         "tag": 2,
         "groupUsers": [
           {
-            "id": "e07f3c06-9baf-458e-a8fa-21a2e8772608"
+            "id": "e8ed9151-bd1b-4a74-b95e-6193f554c342"
           }
         ],
         "variables": [
@@ -221,7 +253,7 @@
         ],
         "activitiesPrev": [
           {
-            "id": "b4a84c03-46e1-4948-8c3a-b4b1116d6146"
+            "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
           }
         ],
         "condition": "true"

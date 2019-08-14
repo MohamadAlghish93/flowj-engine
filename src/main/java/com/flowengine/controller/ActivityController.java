@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flowengine.entity.Activity;
 import com.flowengine.entity.Arrow;
 import com.flowengine.entity.Variable;
+import com.flowengine.entity.VariableOptionValue;
 import com.flowengine.service.ActivityService;
 import com.flowengine.service.ArrowService;
+import com.flowengine.service.VariableOptionValueService;
 import com.flowengine.service.VariableService;
 import com.flowengine.shared.EnumsApp;
 import com.flowengine.shared.ResponseService;
@@ -32,6 +34,9 @@ public class ActivityController {
     @Autowired
     VariableService variableService;
 
+    @Autowired
+    VariableOptionValueService variableOptionValueService;
+
     private com.flowengine.business.Activity _businessActivity;
 
     public ActivityController() {
@@ -48,12 +53,21 @@ public class ActivityController {
 
             List<Arrow> arrows;
             List<Activity> activityList = this.activityService.findAllByProcessId(processId);
-            List<Activity> activity = this._businessActivity.getMyActiveActivityByGroupId(activityList, groupId);
-
-            responseService.setData(activity);
+            List<Activity> activities = this._businessActivity.getMyActiveActivityByGroupId(activityList, groupId);
 
             for (Activity item:
-                    activity) {
+                    activities) {
+
+                for (Variable iter:
+                     item.getVariables()) {
+
+                    List<VariableOptionValue> list =
+                            this.variableOptionValueService.findAllByVariableId(iter.getId());
+
+                    if (list != null && list.size() > 0) {
+                        iter.setVariableOptionValues(list);
+                    }
+                }
 
                 if (item.getTag() != EnumsApp.enumActivityTags.end.ordinal()) {
                     arrows = new ArrayList<>();
@@ -66,6 +80,7 @@ public class ActivityController {
                 }
             }
 
+            responseService.setData(activities);
 
         } catch (Exception e) {
             responseService.setStatus(false);
@@ -94,7 +109,7 @@ public class ActivityController {
             Activity activity1 = this.activityService.saveActivity(value);
 
             List<Activity> activityList = this.activityService.findAllByProcessId(value.getProcessId());
-            List<Activity> activities = this._businessActivity.getOtherActivitiesActive(activityList, value.getId());
+            List<Activity> activities = this._businessActivity.getOtherActivitiesActivity(activityList, value.getId());
 
             if (activities.size() == 0 && !multiArrow) {
                 Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
