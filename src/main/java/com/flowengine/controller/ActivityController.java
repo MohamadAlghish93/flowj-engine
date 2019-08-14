@@ -5,6 +5,7 @@ import com.flowengine.entity.Activity;
 import com.flowengine.entity.Arrow;
 import com.flowengine.entity.Variable;
 import com.flowengine.entity.VariableOptionValue;
+import com.flowengine.entity.helper.VariableFile;
 import com.flowengine.service.ActivityService;
 import com.flowengine.service.ArrowService;
 import com.flowengine.service.VariableOptionValueService;
@@ -13,6 +14,7 @@ import com.flowengine.shared.EnumsApp;
 import com.flowengine.shared.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -133,5 +135,25 @@ public class ActivityController {
             responseService.setMessage(e.getMessage());
         }
         return responseService;
+    }
+
+
+    @PostMapping(value = "/addVariableFile")
+    public ResponseService addFiles(@RequestParam("file") MultipartFile[] file, @RequestParam("variableFile") String variableFile) {
+        ResponseService responseService = new ResponseService();
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            VariableFile humanCaseObj = mapper.readValue(variableFile, VariableFile.class);
+//            HumanCase addedProject =  this.humanCaseService.addFile(humanCaseObj, file);
+//            responseService.setData(addedProject);
+
+
+        } catch (Exception e) {
+            responseService.setStatus(false);
+            responseService.setMessage(e.getMessage());
+        }
+
+        return responseService;
+
     }
 }
