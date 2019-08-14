@@ -22,37 +22,6 @@
             "type": "text",
             "value": "",
             "required": true
-          },
-          {
-            "id": "f018ca95-cb2f-41a6-a174-aad09d072be8",
-            "name": "DOB",
-            "type": "date",
-            "value": "",
-            "required": true
-          },
-          {
-            "id": "dc987e78-9c18-4cc5-a598-8260b62919eb",
-            "name": "Gender",
-            "type": "radio",
-            "value": "",
-            "variableOptionValues": [
-              {
-                "text": "Male",
-                "value": "M"
-              },
-              {
-                "text": "Female",
-                "value": "F"
-              }
-            ],
-            "required": true
-          },
-          {
-            "id": "3a082958-5c15-448d-a2df-6f2b2f95fd71",
-            "name": "Primary Reason for Referral",
-            "type": "textarea",
-            "value": "",
-            "required": false
           }
         ]
       },
