@@ -3,10 +3,7 @@ package com.flowengine.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flowengine.entity.*;
 import com.flowengine.entity.helper.HelperVariableFile;
-import com.flowengine.service.ActivityService;
-import com.flowengine.service.ArrowService;
-import com.flowengine.service.VariableOptionValueService;
-import com.flowengine.service.VariableService;
+import com.flowengine.service.*;
 import com.flowengine.shared.EnumsApp;
 import com.flowengine.shared.ResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +32,9 @@ public class ActivityController {
 
     @Autowired
     VariableOptionValueService variableOptionValueService;
+
+    @Autowired
+    ConditionService conditionService;
 
     private com.flowengine.business.Activity _businessActivity;
 
@@ -74,6 +74,13 @@ public class ActivityController {
                     tmpActivities.add(item);
                     arrows = this.arrowService.findAllByActivityCurrent(tmpActivities);
 
+                    for (Arrow elem:
+                            arrows) {
+
+                        List<Condition> conditions = this.conditionService.findAllByArrowId(elem.getId());
+                        elem.setCondition(conditions);
+                    }
+
                     responseService.setMultiObject(true);
                     responseService.append_objects("Arrows_" + item.getId(), arrows);
                 }
@@ -91,12 +98,14 @@ public class ActivityController {
 
 
     @RequestMapping(
-            value = "/excuteActivity/{activityId}/{multiArrow}",
+            value = {"/excuteActivity/{activityId}/{multiArrow}/{variableCondition}" ,
+                    "/excuteActivity/{activityId}/{multiArrow}"  },
             method = RequestMethod.POST
     )
-    public ResponseService excuteActivity(@Valid @RequestBody String activity, @PathVariable UUID activityId, @PathVariable boolean multiArrow) {
+    public ResponseService excuteActivity(@Valid @RequestBody String activity, @PathVariable UUID activityId, @PathVariable boolean multiArrow, @PathVariable Optional<UUID> variableCondition) {
         ResponseService responseService = new ResponseService();
         try{
+            Boolean condition = true;
             ObjectMapper mapper = new ObjectMapper();
             Activity value = mapper.readValue(activity, Activity.class);
 
@@ -110,21 +119,49 @@ public class ActivityController {
             List<Activity> activityList = this.activityService.findAllByProcessId(value.getProcessId());
             List<Activity> activities = this._businessActivity.getOtherActivitiesActivity(activityList, value.getId());
 
-            if (activities.size() == 0 && !multiArrow) {
-                Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+            if (variableCondition.isPresent()) {
 
-                if (activity2 != null) {
-                    activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
-                    this.activityService.saveActivity(activity2.get());
-                }
-            } else if (multiArrow) {
-                Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+                Optional<Variable> variable = this.variableService.findById(variableCondition.get());
 
-                if (activity2 != null) {
-                    activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
-                    this.activityService.saveActivity(activity2.get());
+                if ( variable.isPresent() ) {
+
+                    String str = variable.get().getValue();
+
+                    if ( str != null && !str.isEmpty() && ( str.equalsIgnoreCase("true") || str.equalsIgnoreCase("false") )) {
+                        condition =  Boolean.valueOf(str);
+                    } else {
+                        condition = false;
+                    }
                 }
             }
+
+            if (condition) {
+
+                Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+                if (activity2 != null) {
+
+                    activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
+                    this.activityService.saveActivity(activity2.get());
+                }
+
+//                if (activities.size() == 0 && !multiArrow) {
+//
+//                    Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+//
+//                    if (activity2 != null) {
+//                        activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
+//                        this.activityService.saveActivity(activity2.get());
+//                    }
+//                } else if (multiArrow) {
+//                    Optional<Activity> activity2  = this.activityService.findActivityById(activityId);
+//
+//                    if (activity2 != null) {
+//                        activity2.get().setStatus(EnumsApp.enumActivityStatus.active.ordinal());
+//                        this.activityService.saveActivity(activity2.get());
+//                    }
+//                }
+            }
+
 
             responseService.setData(activity1);
         } catch (Exception e) {

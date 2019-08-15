@@ -47,7 +47,7 @@ public class VariableFile {
     }
 
 
-//    @Transient
+    @Transient
     @ManyToOne( cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "variable_id",referencedColumnName = "ID", nullable = false,insertable=false, updatable=false)
 

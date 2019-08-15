@@ -26,6 +26,7 @@ public class EnumsApp {
         date,
         radio,
         file,
-        textarea
+        textarea,
+        checkbox
     }
 }

@@ -18,7 +18,7 @@ public class Arrow {
     private List<Activity> activityCurrent;
     private List<Activity> activitiesNext;
     private List<Activity> activitiesPrev;
-    private String Condition;
+    private List<Condition> condition;
 
     @Column(name = "id")
     @Id
@@ -49,16 +49,6 @@ public class Arrow {
 
     public void setProcessId(UUID processId) {
         this.processId = processId;
-    }
-
-    @Basic
-    @Column(name = "condition", length = 2048)
-    public String getCondition() {
-        return Condition;
-    }
-
-    public void setCondition(String condition) {
-        Condition = condition;
     }
 
 
@@ -108,5 +98,16 @@ public class Arrow {
 
     public void setArrowsProcess(Process arrowsProcess) {
         this.arrowsProcess = arrowsProcess;
+    }
+
+    @Transient
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "arrow")
+    public List<Condition> getCondition() {
+        return condition;
+    }
+
+    public void setCondition(List<Condition> condition) {
+        this.condition = condition;
     }
 }

@@ -32,7 +32,7 @@ public class Variable {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false, length = 2048)
     public String getName() {
         return name;
     }
@@ -52,7 +52,7 @@ public class Variable {
     }
 
     @Basic
-    @Column(name = "value", nullable = true, length = 500)
+    @Column(name = "value", nullable = true, length = 2048)
     public String getValue() {
         return value;
     }
@@ -82,7 +82,7 @@ public class Variable {
         this.variableOptionValues = variableOptionValues;
     }
 
-//    @Transient
+    @Transient
     @OneToMany(orphanRemoval=true,fetch = FetchType.LAZY,
             cascade = {CascadeType.MERGE, CascadeType.REMOVE},mappedBy = "variableFromFile")
     public List<VariableFile> getVariableFiles() {

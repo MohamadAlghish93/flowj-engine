@@ -15,7 +15,7 @@
             "id": "1eecc141-5d50-49a7-ad31-705085548d8c"
           }
         ],
-        "variables": [
+        "variables": [          
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
             "name": "Name of Client",
@@ -158,7 +158,7 @@
             "type": "file",
             "value": "",
             "required": false
-          }
+          }          
         ]
       },
       {
@@ -173,15 +173,324 @@
         ],
         "variables": [
           {
-            "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
-            "type": "text",
-            "value": ""
+            "id": "baad897e-c087-47f7-9c7f-ade5f067fc60",
+            "name": "Pregnancy/Delivery",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "f450566a-9585-4145-994d-dc018a311814",
+            "name": "Is the person under any current medical condition?",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "08ecb60a-0ead-4f0e-8e29-c7f0916fa5c7",
+            "name": "Is the person currently under any medications? If yes. please specify",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "920fdd73-127d-48e1-a67b-10a041e00dfc",
+            "name": "Does the person has any any Allergies to any substances, food etc.If yes, please specify",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "8b29d822-1376-4175-87ac-e60807785bc0",
+            "name": "Sleep Pattern",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "8752055c-c4ca-46a8-83f4-14884ff85138",
+            "name": "Eating habits",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "00f5ef86-3f1e-4b17-a564-bbb305d3911c",
+            "name": "Other",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "4ec32c8e-da84-4ef0-9e14-64f6f009c391",
+            "name": "Teacher's report on Social and group Skills: (participation in group, peer interactions, etc.)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "0ad6bcf6-a8a6-41b0-b451-09b312da7053",
+            "name": "Teacher's report on Academic Skills (reading, math, writing, etc.)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "bed71718-e13f-400b-8f7f-0444c349a0e8",
+            "name": "Describe his/her current receptive language Skills (following instruction, listener skills,)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "d0d05248-c212-415d-881a-6789be8397f3",
+            "name": "Describe his/her current expressive language skills:(labeling, requesting)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "de11fc0e-ade7-4791-a3fa-a3a6f53e44f8",
+            "name": "Describe his/her current expressive language skills:(labeling, requesting)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "9b84de7b-47da-4ab1-9efe-05fe30e056c4",
+            "name": "Current echoic skills:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "7b6fbb13-68eb-48e8-a4c2-54039537b312",
+            "name": "Eye Contact",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "41cbf556-4231-4606-a32b-adcf0448622d",
+            "name": "Peer Interactions (sharing, turn taking etc,)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "0920d4f6-3a64-44ca-ad5f-f1e837ebd82c",
+            "name": "Physical Development Rolling over:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "28f43e9b-3a27-479d-b11d-7e5fb6d9c3f6",
+            "name": "Physical Development Crawling:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "3a68d419-d958-478f-a120-097d98fa0e9c",
+            "name": "Physical Development Walking:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "a938ed77-fdbb-44b4-9de3-cf2b53b4fb8e",
+            "name": "Communication Skills First word:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "775619a1-4d91-4dd0-be4f-26b5703b4a9b",
+            "name": "Adaptive Skills Dressing:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "fdf91cd7-2bf1-4bd4-89b2-594d7325b4ec",
+            "name": "Adaptive Skills Feeding:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "ef16e775-9a67-4aa2-b5ce-16a1f8114747",
+            "name": "Adaptive Skills Toiletting:",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "a97009a0-fb91-44cf-9dc5-1d36c3070a1b",
+            "name": "Name of School",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "912ad0f1-762f-4146-9dde-b1d7f3ba457f",
+            "name": "Teachers report on Classroom Behavior: (compliance, attending skills, etc.)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "32efde3c-c6d7-4453-8541-e9e3d82b5f35",
+            "name": "Adult Interactions",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "9758c885-c8be-4e32-8bd7-3ccc1d228680",
+            "name": "Are there any concerns in the person's behavior? If yes, please provide the following details.",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "6429be63-ce3c-44eb-837e-deb6623a9456",
+            "name": "Does the child engage in any repetitive behaviors? If yes, describe the behavior in your own words.",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "771f5990-50f2-4563-a626-7a8f7044ea0f",
+            "name": "Does the person engage in any aggressive behaviors such as hitting, biting, etc?If yes, describe the behavior in your own words.",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "2be7b10d-d3a0-457f-8b1f-00d336c6a8a3",
+            "name": "Are there any sitations where you find him/her non-compliant ? (not following instructions, etc.)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "ff188ca2-8b8a-4d31-9127-9f2cb821ec53",
+            "name": "Does the person engage in any self-injurious or harmful behaviors? (harming themselves)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "4690975c-b9bd-44d4-a0f5-599351ae6772",
+            "name": "Does the person engage in any unsafe or harmful behaviors? (health, safety skills,)",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "b23fa8cb-ceec-48bf-946b-4ee99a86a1c6",
+            "name": "Are there any concerns in his/her gross Motor Skills",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "179a3d0a-abbb-4fb5-a503-953ecde838b8",
+            "name": "Are there any concerns in his/her fine Motor Skills",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "3f4c1e6e-3e32-4782-b3ce-024dca65a107",
+            "name": "Are there any concerns in his/her Eating skills",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "51e81a8c-2b87-4409-85a5-60376371c507",
+            "name": "Are there any concerns in his/her Grooming skills?",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "983af398-b114-4a7f-b3d0-9598dd1560e7",
+            "name": "Is the person toilet trained? Please describe his/her toileting skills",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "bdef4ad5-4a13-4376-92f4-cbcc104a052d",
+            "name": "What are the person's preferred items/activities",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "d8884835-8d89-496c-9847-72be17dc2708",
+            "name": "Type of play (repetitive, engagement with toys etc,",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "a0840f72-31bf-4efc-8e5d-03eda9790a08",
+            "name": "Interactive Play",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "202ba1a5-13e8-40d1-9169-b10eab85200b",
+            "name": "Functional Play",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "d37a153c-3475-46b9-aadf-18a4d2e9cb7b",
+            "name": "Imaginative Play/Pretend play",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "0e49da05-a66c-414a-97dc-5d274901958b",
+            "name": "What are your priority goals for your child?",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "bf5e4a0f-a010-4f93-8e6a-c99f90bfb892",
+            "name": "What are your expectations from the service center?",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "e6fde4d9-e499-4e04-974a-eb9dc16df068",
+            "name": "Other details/concerns",
+            "type": "textarea",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "e5fb71f6-135c-464e-bf2e-663b210a2567",
+            "name": "Recommendation",
+            "type": "textarea",
+            "value": "",
+            "required": false
           }
         ]
       },
       {
-        "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea",
+        "id": "84f56597-8bfd-467c-8209-e7ab1c0a1082",
         "name": "A.B.A Interview with Child",
         "status": 0,
         "tag": 1,
@@ -192,10 +501,674 @@
         ],
         "variables": [
           {
-            "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
-            "type": "text",
-            "value": ""
+            "id": "9c8957ac-9b7e-4e06-b268-47bfcc13d82f",
+            "name": "Emits 2 mands with echoic or imitative prompt(no physical prompts:",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "gaze shift, move closer as mand",
+                "value": "0.5"
+              },
+              {
+                "text": "pulls adult, point and gestures",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "581dee32-2b5d-49ea-a52c-41d0d7ee8d9a",
+            "name": "Emits 4 mands w/o prompts except item and/or 'What do you want?' ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. point and nuds,2. emits 2 different mands",
+                "value": "0.5"
+              },
+              {
+                "text": "3. spontaneous mand emit,4. generalizes 2 mands across 2 people",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "5b242e92-f6db-4b68-8956-8e77d5b0f477",
+            "name": "Generalizes 6 mands across 2 people, settings, and examples.",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. Toys,2. Food,3. Juice,4. Music",
+                "value": "0.5"
+              },
+              {
+                "text": "5. Play time,6. Coloring book",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "0bb87c50-117c-4383-887a-44d18d33a64b",
+            "name": "Emits 5 mands in 1 hour (item can be present).",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. Juice,2. water",
+                "value": "0.5"
+              },
+              {
+                "text": "3. car,4. coloring book",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "e0a8eeff-e6e4-4c82-af2f-1550db82488b",
+            "name": "Emits 10 mands w/o prompts except item and/or 'What do you want?' ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. apple,2. car,3. juice,4. music,5. play,6. book,7. pencil,8. animals",
+                "value": "0.5"
+              },
+              {
+                "text": "9. ball,10. play tools",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "d26ffece-02ec-461c-ad99-27435792f301",
+            "name": "Mands for 20 different missing items w/o prompts. ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Spontaneous emits 5 mands without object present ",
+                "value": "0.5"
+              },
+              {
+                "text": "Emits 15 mands with object present no prompt Maintain newly acquired mand",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "d81be288-7354-4534-8134-2b328c317f91",
+            "name": "Mands for 5 actions. ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Emits 2 mands to remove undesirable items",
+                "value": "0.5"
+              }
+            ],
+            "required": false
+          },{
+            "id": "0bdd4649-6b97-4bf6-8650-fabb936560c0",
+            "name": "Emits 5 different 2 word mands (not including 'I want'). ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Mands with yes and no Unable",
+                "value": "0.5"
+              }
+            ],
+            "required": false
+          },{
+            "id": "de157903-1ef3-4d44-b67d-6c70e91b5470",
+            "name": "Tacts any two items (people, pet, character, or object) (may be part mand) (no echoic prompt)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. tact familiar person with prompts",
+                "value": "0.5"
+              },
+              {
+                "text": "2. tact objects with prompts",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "36ec6025-1534-402e-b4bc-5f2e8c4f0b90",
+            "name": "Tacts any 4 items (may be part mand) (not echoic prompts)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. people, 2. objects, 3. shapes, ",
+                "value": "0.5"
+              },
+              {
+                "text": "4. characters",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "d6b27324-f5b2-41fe-a979-926f076ebaac",
+            "name": "Tacts 6 non-reinforcing items (w/o echoic prompts",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. bed, 2. bicycle, 3. car, 4. ball, 5. shoe",
+                "value": "0.5"
+              },
+              {
+                "text": "6. utensils",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "aaeb9079-e018-4004-83ee-dbf34fc786d0",
+            "name": "Spontaneously tacts 2 items during an observation (TO: 60 min)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. tact family members photo",
+                "value": "0.5"
+              },
+              {
+                "text": "2. tact picture cards",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "7dc7ff01-0a7e-44ad-9af5-107ed9781a85",
+            "name": "Tacts 10 items (common objects, body parts, pictures, or people)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Tacts several pictures and Items Maintain newly acquired tacts Generalizes",
+                "value": "0.5"
+              }
+            ],
+            "required": false
+          },{
+            "id": "957110da-06d1-4421-bc62-33fde9fd97ed",
+            "name": "Tacts 25 items when asked 'what's that?' ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Tacts 20 items (1 exemplar) from list in Tact 7 ",
+                "value": "0.5"
+              },
+              {
+                "text": "Tacts 25 items (1 exemplar) from list in Tact 7 ",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "b86b019d-23cc-4cd3-9a87-b064f28fa7af",
+            "name": "Tacts 10 ongoing actions ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. Clapping ,2. Jumping ,3. Sneezing ,4. Sleeping ,5. Crying",
+                "value": "0.5"
+              },
+              {
+                "text": "6. Blowing ,7. Dancing ,8. Waving ,9. Coughing ,10. Knocking ",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "b1cde0be-2c3d-4e15-80e1-158d7800f33d",
+            "name": "Tacts a total of 200 nouns and/or verbs.",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Tacts 150 items and/or actions",
+                "value": "0.5"
+              },
+              {
+                "text": "Tacts 200 total",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "ed9ec5f4-80bd-43a4-a9c9-fda3d14f6cbb",
+            "name": "Attends to a speaker's voice by making eye contact with the speaker 5 times.",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Orients 3 Times",
+                "value": "0.5"
+              },
+              {
+                "text": "Orients 5 Times",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "296f488a-9d6e-43c7-bdf4-f72e101395c9",
+            "name": "Performs 4 different motor actions on command without a visual prompt (e.g., Can you jump? Show me clapping",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Action 1 two times, Action 2 two times ",
+                "value": "0.5"
+              },
+              {
+                "text": "Action 1, Action 2, Action 3, Action 4",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "3e61a6d0-634b-4c60-bb05-0936985549e7",
+            "name": "Selects the correct item from an array of 4, for 20 different objects or pictures (e.g., Show me cat. Touch shoe)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. Apple, 2. Cookies, 3. Cat, 4. Bird, 5. Airplane, 6. Car, 7. Shoes, 8. Shirt, 9. Chair, 10. Bed, 11. Bicycle, 12. Ball, 13. Spoon, 14. Cup",
+                "value": "0.5"
+              },
+              {
+                "text": "15. Flower, 16. Banana, 17. Tomato, 18. Lion, 19. Truck",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "a7bb310f-12ca-4540-ac46-312462c0a64d",
+            "name": "Selects the correct item from a messy array of 6 for 40 different objects or pictures (e.g., Find cat. Touch ball.)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1. apple, 2. cookies, 3. cat, 4. bird, 5. airplane, 6. car, 7. shoes, 8. shirt, 9. chair, 10. bed, 11. bicycle, 12. ball, 13. spoon, 14. Lion, 15. sheep, 16. chicken, 17. rabbit, 18. train, 19. hat, 20. jacket, 21. couch, 22. bucket, 23. bubbles, 24. crayons, 25. puzzel",
+                "value": "0.5"
+              },
+              {
+                "text": "26. cup, 27. flower, 28. banana, 29. grape, 30. bread, 31. ice cream, 32. candy, 33. milk, 34. glass, 35. clock, 36. book, 37. pencil, 38. television, 39. telephone, 40. stove",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "685869e3-4bb3-4290-a7f6-141975a08d08",
+            "name": "Performs 10 specific motor actions on command (e.g., Show me clapping. Can you hop?)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Clapping , Jumping , Sneezing , Sleeping , Crying ",
+                "value": "0.5"
+              },
+              {
+                "text": "Blowing, Dancing, Waving, Coughing, Knocking",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "dc706647-f76e-4ff5-9f53-db3522769746",
+            "name": "Selects the correct item in a book, picture scene, or natural environment when named, for 250 items (Tested or from an accumulated list of known words)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "25 , 50, 75, 100, 125, 150",
+                "value": "0.5"
+              },
+              {
+                "text": "175, 200, 225, 250",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "947cbfcb-5a01-4af1-a746-875ecab8ce00",
+            "name": "Has a total listener repertoire of 1200 words (nouns, verbs, adjectives, etc.) tested or from an accumulated list of known words",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "100, 200, 300, 400, 500, 600, 700, 800",
+                "value": "0.5"
+              },
+              {
+                "text": "900, 1000, 1100, 1200",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "1a37788b-49ea-47ab-a63a-22f412f65a6c",
+            "name": "Visually attends to a toy or book for 30 seconds. (Not a self stim item) ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "15 seconds",
+                "value": "0.5"
+              },
+              {
+                "text": "30 seconds",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "06dad388-1a23-42f7-a9af-45b931c8ae9e",
+            "name": "Places 3 items in a container, stacks 3 blocks or places 3 rings on a peg for 2 of these or similar activities. ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Two items for a single activity, 1 Toys, 2 Cryons",
+                "value": "0.5"
+              },
+              {
+                "text": "1. Dump things out of container, 2. Push objects, 3. stack blocks",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "2e0d272c-a0b2-49ab-8c5c-b45d3263027a",
+            "name": "Manipulates and explores objects for 1 minute (e.g., looks at a toy, turns it over, presses buttons) (timed observation 30 minutes)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "30 seconds during 30 minute observation",
+                "value": "0.5"
+              },
+              {
+                "text": "1 minute during a 30 minute observation",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "e4446c13-a37c-4aff-bf67-884e63ab177b",
+            "name": "Shows variation in play by independently interacting with 5 different items (e.g., plays with rings, then a ball, then a block) (timed observation 30 minutes)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "3 different items during a 30 minute observation",
+                "value": "0.5"
+              },
+              {
+                "text": "5 different items during a 30 minute observation",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "89892177-7a59-44c3-970f-d3178642af5b",
+            "name": "Demonstrates generalization by engaging in exploratory movement and playing with the toys in a novel environment for 2 minutes (e.g., in a new playroom) (timed observation 30 minutes)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1 minute during a 30 minute observation",
+                "value": "0.5"
+              },
+              {
+                "text": "2 minutes during a 30 minute observation",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "e8095aca-1347-42e9-830d-cbd553515bfc",
+            "name": "Independently engages in movement play for 2 minutes (e.g., swinging, dancing, rocking, jumping, climbing) (timed observation 30 minutes)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1 minute during 30 minute observation ",
+                "value": "0.5"
+              },
+              {
+                "text": "2 minutes during 30 minute observation ",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "edaec685-2da6-4450-9acb-b87b59cae397",
+            "name": "Independently engages in causeand effect play for 2 minutes (e.g., dumping containers, playing with pop-up toys, pulling toys, etc.) (timed observation 30 minutes)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "1 minute during 30 minute observation",
+                "value": "0.5"
+              },
+              {
+                "text": "2 minutes during 30 minute observation",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "43ab3336-2059-4490-b31e-7dbd2845e298",
+            "name": "Searches for a missing or corresponding toy or part of a set for 5 items or sets (e.g., a puzzle piece, a ball for a dropin toy, a bottle for a baby doll). ",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Set/Activity 1, Set/Activity 2",
+                "value": "0.5"
+              },
+              {
+                "text": "Set/Activity 3, Set/Activity 4, Set/Activity 5",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "15426881-6051-4fa9-b905-491445446531",
+            "name": "Independently demonstrates the use of toys or objects according to their function for 5 items (e.g. placing a train on a track, pulling a wagon, holding a telephone to the ear)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Item 1 Car, Item 2  Train",
+                "value": "0.5"
+              },
+              {
+                "text": "Item 3  Phone, Item 4  Piano, Item 5  Drum",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "ef5e5d8c-d38b-4c73-bd84-394ee6c92492",
+            "name": "Plays with every day items in creative ways 2 times (e.g., uses a bowl as a drum or a box as a n imaginary car)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Item 1  Unable",
+                "value": "0.5"
+              },
+              {
+                "text": "Item 2",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "a28217ab-966b-43f6-ba63-9c6f39fbdb23",
+            "name": "Independently engages in play on structures and playground equipment for a total of 5 minutes (e.g. going down a slide, swinging)  timed observation.",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "2 minutes during a 30 minute observation",
+                "value": "0.5"
+              },
+              {
+                "text": "5 minutes during a 30 minute observation",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "f5261bd5-1077-48f0-ba24-63b5571143d8",
+            "name": "Assembles toys that have multiple parts for 5 different sets of materials (e.g., Mr. Potato head, Little People sets, Cootie Bugs, Kind K' Next).",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Two sets",
+                "value": "0.5"
+              },
+              {
+                "text": "Five sets",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "a8c10465-7097-4376-8856-1036e8e375bb",
+            "name": "Spontaneously engages in pretend or imaginary play on 5 occasions (e.g., dressing up, a pretend party with stuffed animals, pretends to cook)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Occasion 1 Unable, Occasion 2",
+                "value": "0.5"
+              },
+              {
+                "text": "Occasion 3, Occasion 4, Occasion 5",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "826e9caf-31c7-49cf-b132-5aee0f3ca77e",
+            "name": "Repeats a gross motor behavior to obtain a better effect for 2 activities (e.g.,  throwing a ball in a basket, swinging a bat at a T-ball, foot stomping to launch a rocket, pumping a swing)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "Activity 1 Unable",
+                "value": "0.5"
+              },
+              {
+                "text": "Activity 2",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "559fdc5b-bfcd-4bb8-9a92-b025e5ddc738",
+            "name": "Independently engages in arts and crafts type activities for 5 minutes (e.g., drawing, coloring, painting, cutting, pasting)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "2 minutes Unable",
+                "value": "0.5"
+              },
+              {
+                "text": "5 minutes",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "6a3fcc2d-10c4-4700-b374-42a1353b1c12",
+            "name": "Independently engages in sustained play activities for 10 minutes without adult prompts or reinforcement (e.g., playing with a Etch-a-sketch, playing dress up)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "5 minutes w/o prompts Unable",
+                "value": "0.5"
+              },
+              {
+                "text": "10 minutes w/o prompts",
+                "value": "1"
+              }
+            ],
+            "required": false
+          },{
+            "id": "d6d459f2-7164-4817-8250-704a9a97e959",
+            "name": "Independently draws or writes in pre-academic activity books for 5 minutes (e.g., to-to-dot, matching games, mazes, tracing letters and numbers)",
+            "type": "radio",
+            "value": "",
+            "variableOptionValues": [
+              {
+                "text": "2 minutes Unable",
+                "value": "0.5"
+              },
+              {
+                "text": "5 minutes",
+                "value": "1"
+              }
+            ],
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea",
+        "name": "A.B.A Analytics",
+        "status": 0,
+        "tag": 1,
+        "groupUsers": [
+          {
+            "id": "e8ed9151-bd1b-4a74-b95e-6193f554c342"
+          }
+        ],
+        "variables": [
+          {
+            "id": "d8348117-5b58-4682-b1a3-ae3890507e93",
+            "name": "Occupational Therapy",
+            "type": "checkbox",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "33717c9f-219c-4ebc-8219-c6356f9925bd",
+            "name": "Language & Speech",
+            "type": "checkbox",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "3c46baaf-ed37-4b65-be3e-53ae798fe1a7",
+            "name": "Special Education",
+            "type": "checkbox",
+            "value": "",
+            "required": false
+          },
+          {
+            "id": "673ab76e-7303-4555-811b-d30d9cc59134",
+            "name": "Psychotherapy",
+            "type": "checkbox",
+            "value": "",
+            "required": false
           }
         ]
       },
@@ -212,9 +1185,10 @@
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
           }
         ]
       },
@@ -231,9 +1205,10 @@
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
           }
         ]
       },
@@ -250,9 +1225,10 @@
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
           }
         ]
       },
@@ -269,9 +1245,10 @@
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
           }
         ]
       },
@@ -288,13 +1265,13 @@
         "variables": [
           {
             "id": "f34073c8-7999-4d4c-927e-f76b5751d325",
-            "name": "var1",
+            "name": "Name of Client",
             "type": "text",
-            "value": ""
+            "value": "",
+            "required": true
           }
         ]
       }
-
     ],
     "arrows": [
       {
@@ -312,7 +1289,8 @@
         ],
         "activitiesPrev": [
         ],
-        "condition": "true"
+        "condition": [
+        ]
       },
       {
         "id": "dd0626bf-bb2a-4cad-a048-30679d29ec51",
@@ -324,7 +1302,7 @@
         ],
         "activitiesNext": [
           {
-            "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
+            "id": "84f56597-8bfd-467c-8209-e7ab1c0a1082"
           }
         ],
         "activitiesPrev": [
@@ -332,7 +1310,29 @@
             "id": "68460b84-8639-4912-8031-0fd0e31385fc"
           }
         ],
-        "condition": "true"
+        "condition": [
+        ]
+      },
+      {
+        "id": "50b17e30-8569-46f2-bbb0-7089e32397a6",
+        "name": "next",
+        "activityCurrent": [
+          {
+            "id": "84f56597-8bfd-467c-8209-e7ab1c0a1082"
+          }
+        ],
+        "activitiesNext": [
+          {
+            "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
+          }
+        ],
+        "activitiesPrev": [
+          {
+            "id": "b4a84c03-46e1-4948-8c3a-b4b1116d6146"
+          }
+        ],
+        "condition": [
+        ]
       },
       {
         "id": "c0e5b477-d887-4979-ac4b-e92106d27e80",
@@ -358,10 +1358,23 @@
         ],
         "activitiesPrev": [
           {
-            "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
+            "id": "84f56597-8bfd-467c-8209-e7ab1c0a1082"
           }
         ],
-        "condition": "true"
+        "condition": [
+          {
+            "value": "d8348117-5b58-4682-b1a3-ae3890507e93"
+          },
+          {
+            "value": "33717c9f-219c-4ebc-8219-c6356f9925bd"
+          },
+          {
+            "value": "3c46baaf-ed37-4b65-be3e-53ae798fe1a7"
+          },
+          {
+            "value": "673ab76e-7303-4555-811b-d30d9cc59134"
+          }
+        ]
       },
       {
         "id": "5467960f-8f0f-406c-b7e6-bb79ff5c271c",
@@ -381,7 +1394,8 @@
             "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
           }
         ],
-        "condition": "true"
+        "condition": [
+        ]
       },
       {
         "id": "5fdec48b-9b7c-4cad-b1d3-7b837fb25e7b",
@@ -401,7 +1415,8 @@
             "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
           }
         ],
-        "condition": "true"
+        "condition": [
+        ]
       },
       {
         "id": "0c220e4c-21b7-4488-bfdb-f0cb61ac1927",
@@ -421,7 +1436,8 @@
             "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
           }
         ],
-        "condition": "true"
+        "condition": [
+        ]
       },
       {
         "id": "8c9fd0f6-d5ab-418e-b8fe-4d0cb11f370c",
@@ -441,7 +1457,8 @@
             "id": "899a94cf-ab3b-4aae-9271-868b1676a8ea"
           }
         ],
-        "condition": "true"
+        "condition": [
+        ]
       }
 
     ]

@@ -7,14 +7,13 @@ import java.util.UUID;
 
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"},ignoreUnknown = true)
 @Entity
-@Table(name = "variable_option_value")
-public class VariableOptionValue {
+@Table(name = "condition")
+public class Condition {
 
     private UUID id;
-    private String text;
     private String value;
-    private UUID variableId;
-    private Variable variable;
+    private UUID arrowId;
+    private Arrow arrow;
 
     @Column(name = "id")
     @Id
@@ -28,16 +27,6 @@ public class VariableOptionValue {
     }
 
     @Basic
-    @Column(name = "text", nullable = true, length = 500)
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    @Basic
     @Column(name = "value", nullable = true, length = 500)
     public String getValue() {
         return value;
@@ -47,24 +36,25 @@ public class VariableOptionValue {
         this.value = value;
     }
 
+
     @Basic
-    @Column(name = "variable_id", nullable = true)
-    public UUID getVariableId() {
-        return variableId;
+    @Column(name = "arrow_id", nullable = true)
+    public UUID getArrowId() {
+        return arrowId;
     }
 
-    public void setVariableId(UUID variableId) {
-        this.variableId = variableId;
+    public void setArrowId(UUID arrowId) {
+        this.arrowId = arrowId;
     }
 
     @Transient
     @ManyToOne( cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    @JoinColumn(name = "variable_id",referencedColumnName = "ID", nullable = true,insertable=true, updatable=true)
-    public Variable getVariable() {
-        return variable;
+    @JoinColumn(name = "arrow_id",referencedColumnName = "ID", nullable = true,insertable=true, updatable=true)
+    public Arrow getArrow() {
+        return arrow;
     }
 
-    public void setVariable(Variable variable) {
-        this.variable = variable;
+    public void setArrow(Arrow arrow) {
+        this.arrow = arrow;
     }
 }

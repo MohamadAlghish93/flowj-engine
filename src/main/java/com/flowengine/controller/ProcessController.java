@@ -35,6 +35,9 @@ public class ProcessController {
     @Autowired
     ArrowService arrowService;
 
+    @Autowired
+    ConditionService conditionService;
+
 
     @RequestMapping(
             value = "/add",
@@ -88,6 +91,16 @@ public class ProcessController {
             }
 
             for (Arrow var : projectObj.getArrows()) {
+
+                if (var.getCondition() != null) {
+
+                    for (Condition iter:
+                            var.getCondition()) {
+
+                        iter.setArrowId(var.getId());
+                        this.conditionService.save(iter);
+                    }
+                }
                 var.setProcessId(projectObj.getId());
                 Arrow arrow = this.arrowService.addArrow(var);
             }
@@ -200,6 +213,18 @@ public class ProcessController {
 
                 }
             }
+
+            for (Arrow var : projectObj.getArrows()) {
+
+                for (Condition condition:
+                     var.getCondition()) {
+
+                    UUID uuid = UUID.fromString(condition.getValue());
+                    if (variableyGuid.containsKey(uuid)) {
+                        condition.setValue(variableyGuid.get(uuid).toString());
+                    }
+                }
+            }
             //endregion
 
 
@@ -224,6 +249,16 @@ public class ProcessController {
             }
 
             for (Arrow var : projectObj.getArrows()) {
+
+                if (var.getCondition() != null) {
+
+                    for (Condition iter:
+                            var.getCondition()) {
+
+                        iter.setArrowId(var.getId());
+                        this.conditionService.save(iter);
+                    }
+                }
                 var.setProcessId(projectObj.getId());
                 Arrow arrow = this.arrowService.addArrow(var);
             }
